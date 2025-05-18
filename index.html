@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Kekasih Tercinta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="notification" class="notification">
+        <div class="notification-content">
+            <h2>Haii Dea Putri Anandov 😍</h2>
+            <p>Bolehkah aku menyampaikan perasaanku ini? kalo boleh klik lanjut ya</p>
+            <button onclick="showSecondNotif()" class="next-button">Lanjut</button>
+        </div>
+    </div>
+
+    <div id="secondNotif" class="notification" style="display: none;">
+        <div class="notification-content">
+            <h2>Kamu Tau Gak? 💭</h2>
+            <p>Saking Kagumnya dengan manusia satu ini, cita-cita ku tahu sudah bukan lagi tentang profesi, melainkan sebuah status</p>
+            <button onclick="showSincereNotif()" class="next-button">Lanjut</button>
+        </div>
+    </div>
+
+    <div id="sincereNotif" class="notification" style="display: none;">
+        <div class="notification-content">
+            <h2>Tunggu Sebentar... 💝</h2>
+            <p>Ku ingin kamu tau bahwa setiap kata yang kuucapkan ini tulus dari lubuk hatiku yang terdalam. Aku bukan orang yang suka bermain-main dengan perasaan</p>
+            <button onclick="showThirdNotif()" class="next-button">Lanjutt</button>
+        </div>
+    </div>
+
+    <div id="thirdNotif" class="notification" style="display: none;">
+        <div class="notification-content">
+            <h2>Hey Kamu... 🌹</h2>
+            <p>Setiap kali melihat senyummu, duniaku seakan berhenti berputar. Kehadiranmu membuat hariku lebih bermakna, dan aku ingin menghabiskan lebih banyak waktu bersamamu.</p>
+            <button onclick="showFourthNotif()" class="next-button">Lanjut</button>
+        </div>
+    </div>
+
+    <div id="fourthNotif" class="notification" style="display: none;">
+        <div class="notification-content">
+            <h2>Kamu Tau Gak? ✨</h2>
+            <p>Aku selalu mencari alasan untuk bisa bertemu denganmu baik didalam pekerjaan aku selalu menanti report problem pc/system punya kamu termasuk saat install corel draw dan support kamu saat training procost, agar bisa melihat kamu. Setiap detik melihatmu terasa begitu berharga. Senyummu, tawamu, dan kehadiranmu membuat hidupku jauh lebih bermakna.</p>
+            <button onclick="showFinalSincereNotif()" class="next-button">Lanjut</button>
+        </div>
+    </div>
+
+    <div id="finalSincereNotif" class="notification" style="display: none;">
+        <div class="notification-content">
+            <h2>Dari Hatiku... 💝</h2>
+            <p>Keseriusanku padamu bukan hanya sekedar kata-kata manis belaka. Aku benar-benar ingin menjadikanmu bagian terindah dalam hidupku, menjadi pendamping dalam setiap langkahku.</p>
+            <button onclick="showProposal()" class="next-button">Lanjutt</button>
+        </div>
+    </div>
+
+    <div id="proposal" class="notification" style="display: none;">
+        <div class="notification-content">
+            <h2>Maukah kamu menjadi kekasihku? 💕</h2>
+            <div class="proposal-buttons">
+                <button onclick="sendTelegramMessage(true)" class="yes-button">Iya</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="heart"></div>
+        <div class="message">
+            <h1 class="title">Dea Putri Anandov</h1>
+            <div class="content">
+                <p class="animate-text">Setiap detak jantung ini berdetak untukmu, setiap hembusan nafas ini bernafas karenamu. Maukah kamu menjadi orang yang spesial dalam hidupku?</p>
+                <p class="animate-text">Setiap kali melihatmu, hatiku berdebar tidak karuan</p>
+                <p class="animate-text">Senyummu membuat hariku lebih berwarna</p>
+                <p class="animate-text">Setiap detak jantungku berbisik namamu, setiap hembusan nafasku menyebut doaku untukmu. Izinkan aku menjadi pelindung dan pendamping hidupmu</p>
+            </div>
+            
+            <div class="music-player" style="display: none;">
+                <audio id="myAudio" autoplay loop>
+                    <source src="audio/Shane Filan.mp3" type="audio/mp3">
+                </audio>
+            </div>
+            <div class="floating-hearts">
+                <span>❤️</span>
+                <span>❤️</span>
+                <span>❤️</span>
+                <span>❤️</span>
+                <span>❤️</span>
+                <span>❤️</span>
+                <span>❤️</span>
+                <span>❤️</span>
+                <span>❤️</span>
+            </div>
+            
+            
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('myAudio');
+            
+            function playAudio() {
+                audio.volume = 0.5;
+                audio.play().catch(function(error) {
+                    console.log("Autoplay gagal:", error);
+                    document.addEventListener('click', function() {
+                        audio.play();
+                    }, { once: true });
+                });
+            }
+
+            playAudio();
+        });
+
+        function showSecondNotif() {
+            document.getElementById('notification').style.display = 'none';
+            document.getElementById('secondNotif').style.display = 'flex';
+        }
+
+        function showSincereNotif() {
+            document.getElementById('secondNotif').style.display = 'none';
+            document.getElementById('sincereNotif').style.display = 'flex';
+        }
+
+        function showThirdNotif() {
+            document.getElementById('sincereNotif').style.display = 'none';
+            document.getElementById('thirdNotif').style.display = 'flex';
+        }
+
+        function showFourthNotif() {
+            document.getElementById('thirdNotif').style.display = 'none';
+            document.getElementById('fourthNotif').style.display = 'flex';
+        }
+
+        function showFinalSincereNotif() {
+            document.getElementById('fourthNotif').style.display = 'none';
+            document.getElementById('finalSincereNotif').style.display = 'flex';
+        }
+
+        function showProposal() {
+            document.getElementById('finalSincereNotif').style.display = 'none';
+            document.getElementById('proposal').style.display = 'flex';
+        }
+
+        function sendTelegramMessage(accepted) {
+            const botToken = '7768183208:AAEy82k1SMExR_YIt2v_iPHkPQFbbzCEj2M';
+            const chatId = '7314158529';
+            const message = accepted ? 
+                '❤️ Dia menerima cintamu! Selamat ya!' : 
+                '💔 Sayang sekali, dia menolak. Jangan menyerah!';
+            
+            const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+            
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: message
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.ok) {
+                    console.log('Pesan berhasil terkirim:', data);
+                } else {
+                    console.error('Gagal mengirim pesan:', data.description);
+                }
+                showResponse(accepted);
+            })
+            .catch(error => {
+                console.error('Error lengkap:', error);
+                showResponse(accepted); // Tetap sembunyikan proposal meskipun ada error
+            });
+        }
+
+        function showResponse(accepted) {
+            document.getElementById('proposal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+<div class="container">
+ 
+</div>
